@@ -7,58 +7,22 @@
     <link rel="icon" href="https://doon.my.canvasite.cn/xd/26387fa4f5b1e3f7b6217b27d79bf264.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://doon.my.canvasite.cn/xd/2d0b56e7e51cf11036ad8734bdb67e2d.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="https://doon.my.canvasite.cn/xd/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
-    <style>
-        /* 页面通用样式 */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        #root {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* 中间的 GIF 图片 */
-        .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        /* 动画区域 */
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: #ffffff;
-            animation: slideUp 2s ease-out forwards;
-        }
-        /* 底部动画 */
-        @keyframes slideUp {
-            0% {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root">
+        <!-- 中间的 GIF 图片 -->
+        <div class="centered">
+            <img src="123.gif" alt="Centered GIF">
+        </div>
+        <!-- 动画显示的底部文字 -->
+        <div class="footer">
+            <p>CONTACT US</p>
+            <p>Email: ling@doon.eu.org</p>
+        </div>
+    </div>
+    <!-- 引入外部JavaScript文件 -->
+    <script src="scripts.js"></script>
+</body>
+</html>
