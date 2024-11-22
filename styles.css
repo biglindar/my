@@ -114,11 +114,36 @@ body, html {
     height: 100%;
     pointer-events: none;  /* 确保不影响用户操作 */
     z-index: -1;
-    background: url('snow.png') repeat top center;
-    animation: snow-fall 10s linear infinite;
+    display: block;
+}
+
+/* 雪点样式 */
+.snow .snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snow-fall linear infinite;
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 10s;
+    animation-delay: -5s;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 12s;
+    animation-delay: -3s;
 }
 
 @keyframes snow-fall {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100%; }
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0.3;
+    }
 }
