@@ -73,3 +73,72 @@ body, html {
         opacity: 1;
     }
 }
+
+/* 页面通用样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;  /* 启用垂直滚动捕捉 */
+    overflow-y: scroll;
+    font-family: Arial, sans-serif;
+}
+
+/* 每个页面部分占满整个屏幕 */
+.page {
+    width: 100%;
+    height: 100vh;   /* 设置高度为视口高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;  /* 滚动对齐 */
+}
+
+/* 第一屏：主页样式 */
+.home-page {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* 第二屏：奖杯展示样式 */
+.trophy-page {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+/* 奖杯画廊样式 */
+.trophy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.trophy {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.trophy img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.trophy h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.trophy p {
+    font-size: 1rem;
+    color: #ccc;
+}
