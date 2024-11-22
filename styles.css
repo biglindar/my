@@ -32,20 +32,13 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
 }
 
 .gif-img {
     width: 300px;
     height: auto;
-}
-
-/* 底部文字样式 */
-.footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
 }
 
 /* 第二屏：奖杯展示样式 */
@@ -86,4 +79,34 @@ body, html {
 .trophy p {
     font-size: 1rem;
     color: #ccc;
+}
+
+/* 固定在右下角的联系方式 */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+    animation: slideUp 2s ease-out forwards;
+    text-align: right;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 联系方式滑入效果 */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
