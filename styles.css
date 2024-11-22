@@ -7,6 +7,8 @@ body, html {
     scroll-snap-type: y mandatory;  /* 启用垂直滚动捕捉 */
     overflow-y: scroll;
     font-family: Arial, sans-serif;
+    background-color: #000;  /* 设置黑色背景增加悲伤感 */
+    position: relative;
 }
 
 /* 每个页面部分占满整个屏幕 */
@@ -22,18 +24,15 @@ body, html {
 
 /* 第一屏：主页样式 */
 .home-page {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);  /* 设置透明度，营造阴郁感 */
     color: #fff;
     text-align: center;
 }
 
-/* 中间的 GIF 图片 */
+/* 中间的 GIF 图片淡入动画 */
 .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     opacity: 0;
-    animation: fadeIn 8s ease forwards;
+    animation: fadeIn 3s ease forwards;
 }
 
 .gif-img {
@@ -43,9 +42,10 @@ body, html {
 
 /* 第二屏：奖杯展示样式 */
 .trophy-page {
-    background-color: #222;
+    background-color: rgba(34, 34, 34, 0.9);
     color: #fff;
     text-align: center;
+    position: relative;  /* 确保定位基准点 */
 }
 
 /* 奖杯画廊样式 */
@@ -71,31 +71,20 @@ body, html {
     margin-bottom: 1rem;
 }
 
-.trophy h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.trophy p {
-    font-size: 1rem;
-    color: #ccc;
-}
-
-/* 固定在第二屏右下角的联系方式 */
+/* 固定在右下角的联系方式，仅在第2页显示 */
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     font-size: 14px;
     color: #fff;
     opacity: 0;
     animation: slideUp 2s ease-out forwards;
-    text-align: right;
+    display: none; /* 默认隐藏 */
 }
 
-/* 仅在第二屏显示联系方式 */
 .trophy-page .footer {
-    position: fixed;
+    display: block;  /* 仅在第2页显示 */
 }
 
 /* 淡入动画 */
@@ -114,4 +103,22 @@ body, html {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/* 下雪效果 */
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* 确保不影响用户操作 */
+    z-index: -1;
+    background: url('snow.png') repeat top center;
+    animation: snow-fall 10s linear infinite;
+}
+
+@keyframes snow-fall {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
 }
