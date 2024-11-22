@@ -33,7 +33,7 @@ body, html {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: fadeIn 3s ease forwards;
+    animation: fadeIn 8s ease forwards;
 }
 
 .gif-img {
