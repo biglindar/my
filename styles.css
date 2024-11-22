@@ -81,9 +81,9 @@ body, html {
     color: #ccc;
 }
 
-/* 固定在右下角的联系方式 */
+/* 固定在第二屏右下角的联系方式 */
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     right: 20px;
     font-size: 14px;
@@ -91,6 +91,11 @@ body, html {
     opacity: 0;
     animation: slideUp 2s ease-out forwards;
     text-align: right;
+}
+
+/* 仅在第二屏显示联系方式 */
+.trophy-page .footer {
+    position: fixed;
 }
 
 /* 淡入动画 */
