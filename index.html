@@ -11,7 +11,14 @@
 </head>
 <body>
     <!-- 下雪效果容器 -->
-    <div class="snow"></div>
+<div class = "snow"> </div>
+.snow{
+   animation: snow 7s linear infinite;
+}
+.snow:nth-child(2) {
+   left: 20%;
+   animation-delay: 1s;
+}
 
     <!-- 第一屏：主页内容 -->
     <section class="page home-page">
