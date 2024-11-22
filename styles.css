@@ -47,15 +47,15 @@ body, html {
     text-align: center;
     font-size: 14px;
     color: #ffffff;
-    animation: slideUp 2s ease-out forwards;
+    animation: slideUp 5s ease-out forwards;
 }
 
 /* 淡出动画定义 */
 @keyframes fadeIn {
-    0% {
+    100% {
         opacity: 0;       /* 初始状态：完全透明 */
     }
-    100% {
+    0% {
         opacity: 1;       /* 最终状态：完全不透明 */
     }
 }
