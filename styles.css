@@ -32,9 +32,11 @@ body, html {
     z-index: 10;
 }
 
-img {
+/* 确保 GIF 图片显示并自适应大小 */
+.gif-img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 /* 底部文字动画 */
