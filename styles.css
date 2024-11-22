@@ -38,7 +38,7 @@ body, html {
     height: auto;                    /* 高度自适应 */
     max-width: 100%;                 /* 防止超出父容器 */
     opacity: 0;                      /* 初始状态为透明 */
-    animation: fadeIn 3s ease forwards;  /* 应用淡入动画 */
+    animation: fadeIn 6s ease forwards;  /* 应用淡入动画 */
 }
 
 /* 底部文字动画 */
