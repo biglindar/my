@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh-CN" style="--inner1Vh: 9.62px; --sbw: 15px;">
+<html lang="zh-CN">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>游戏</title>
-  <link rel="icon" href="https://doon.my.canvasite.cn/xd/26387fa4f5b1e3f7b6217b27d79bf264.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="https://doon.my.canvasite.cn/xd/2d0b56e7e51cf11036ad8734bdb67e2d.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="https://doon.my.canvasite.cn/xd/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏</title>
+    <link rel="icon" href="https://doon.my.canvasite.cn/xd/26387fa4f5b1e3f7b6217b27d79bf264.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="https://doon.my.canvasite.cn/xd/2d0b56e7e51cf11036ad8734bdb67e2d.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://doon.my.canvasite.cn/xd/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-  <div id="root">
-    <section id="YrXFfUY7Z2hrc0ty" style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;">
-      <!-- 中央添加 GIF -->
-      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:10;">
-        <img src="123.gif" alt="Centered GIF" style="max-width:100%; height:auto;">
-      </div>
-      <!-- 页面其他内容 -->
-      <div id="HsR2YGGaLGhKc6Lk" style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
-        <div id="BCZ8fAnOEqejnxb9" style="z-index:0;">
-          <div id="MR8ICdZvrh8gPTrc" style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
-            <div id="nh3AXYEH39ARkXNM" style="width:100%;height:100%;opacity:1.0;">
-              <div id="yqghhmmE3ZszQKyI" style="background-color:#000000;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;"></div>
-            </div>
-          </div>
+    <div id="root">
+        <!-- 在正中间显示 GIF -->
+        <div class="centered">
+            <img src="123.gif" alt="Centered GIF">
         </div>
-      </div>
-      <!-- 其他内容略 -->
-    </section>
-  </div>
-  <script src="./游戏_files/a7bdac05b24347a77bc2ba39247eaaf9c12b11b8b5b7c8ffcd473c8cd1f4ef7d.js" async=""></script>
-  <script src="./游戏_files/388fb330498371d4935abbff11d34d4c30842ca3c4a128cdd290d29db98acb41.js" async=""></script>
+    </div>
 </body>
 </html>
