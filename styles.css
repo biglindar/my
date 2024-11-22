@@ -32,11 +32,11 @@ body, html {
     z-index: 10;
 }
 
-/* 确保 GIF 图片显示并自适应大小 */
 .gif-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 300px;         /* 调整 GIF 的宽度 */
+    height: auto;         /* 保持高度自适应 */
+    max-width: 100%;      /* 最大宽度为父容器宽度 */
+    animation: fadeIn 3s ease-in-out forwards;  /* 应用淡出动画 */
 }
 
 /* 底部文字动画 */
@@ -48,6 +48,16 @@ body, html {
     font-size: 14px;
     color: #ffffff;
     animation: slideUp 2s ease-out forwards;
+}
+
+/* 淡出动画定义 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;       /* 初始状态：完全透明 */
+    }
+    100% {
+        opacity: 1;       /* 最终状态：完全不透明 */
+    }
 }
 
 /* 底部滑动效果 */
