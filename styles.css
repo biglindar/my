@@ -13,6 +13,7 @@ body, html {
     font-family: Arial, sans-serif;
     overflow: hidden;
 }
+
 #root {
     position: relative;
     width: 100%;
@@ -21,6 +22,7 @@ body, html {
     justify-content: center;
     align-items: center;
 }
+
 /* 中间的 GIF 图片 */
 .centered {
     position: absolute;
@@ -29,10 +31,12 @@ body, html {
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 /* 底部文字动画 */
 .footer {
     position: absolute;
@@ -43,6 +47,7 @@ img {
     color: #ffffff;
     animation: slideUp 2s ease-out forwards;
 }
+
 /* 底部滑动效果 */
 @keyframes slideUp {
     0% {
