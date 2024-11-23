@@ -21,93 +21,10 @@ body, html {
     scroll-snap-align: start;
 }
 
-/* 第一屏：主页样式 */
-.home-page {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-}
-
-/* 中间的 GIF 图片淡入动画 */
-.centered {
-    opacity: 0;
-    animation: fadeIn 3s ease forwards;
-}
-
-.gif-img {
-    width: 300px;
-    height: auto;
-}
-
-/* 第二屏：奖杯展示样式 */
-.trophy-page {
-    background-color: rgba(34, 34, 34, 0.9);
-    color: #fff;
-    text-align: center;
-    position: relative;
-}
-
-/* 奖杯画廊样式 */
-.trophy-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.trophy {
-    background-color: #444;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.trophy img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-}
-
-/* 固定在右下角的联系方式，仅在第2页显示 */
-.footer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 14px;
-    color: #fff;
-    opacity: 0;
-    animation: slideUp 2s ease-out forwards;
-    display: none; /* 默认隐藏 */
-}
-
-.trophy-page .footer {
-    display: block;  /* 仅在第2页显示 */
-}
-
-/* 淡入动画 */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* 联系方式滑入效果 */
-@keyframes slideUp {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* 评论区样式 */
+/* 评论表单 */
 .comment-page {
-    background-color: rgba(20, 20, 20, 0.9);
-    color: white;
+    background-color: #f9f9f9;
+    color: #333;
     padding: 2rem;
     text-align: center;
 }
@@ -116,31 +33,89 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+}
+
+#usernameInput, #commentInput {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 
 #commentInput {
-    width: 80%;
-    height: 100px;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-    border: none;
-    background-color: #333;
-    color: white;
+    height: 120px;
 }
 
 button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 0.5rem 2rem;
+    padding: 0.8rem 2rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#commentsContainer div {
-    background-color: #444;
-    margin: 1rem 0;
+/* 评论卡片样式 */
+.comments-container {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     padding: 1rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+
+.comment-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background-color: #ccc;
+}
+
+.comment-content .username {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.comment-content .time {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-button,
+.like-button {
+    cursor: pointer;
+    color: #007bff;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.reply-form {
+    display: none;
+    margin-top: 1rem;
 }
