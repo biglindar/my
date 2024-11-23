@@ -32,7 +32,7 @@ body, html {
 .gif-img {
     width: 300px;  /* 缩小宽度 */
     height: auto;
-    animation: fadeIn 8s ease forwards, popIn 0.8s ease forwards;
+    animation: fadePopIn 1s ease forwards;  /* 统一动画 */
     transform-origin: center; /* 确保从中心弹出 */
 }
 
@@ -65,6 +65,7 @@ body, html {
     width: 100px;
     height: 100px;
     margin-bottom: 1rem;
+    animation: fadePopIn 1s ease forwards;  /* 奖杯动画复用 */
 }
 
 /* 第三屏：评论区样式 */
@@ -130,6 +131,7 @@ button {
     width: 100%;  /* 保证宽度一致 */
     text-align: left;
     box-sizing: border-box;  /* 包括内边距 */
+    animation: fadePopIn 1s ease forwards;  /* 评论动画复用 */
 }
 
 /* 评论文本样式 */
@@ -147,14 +149,17 @@ button {
     color: #fff;
 }
 
-/* 新增：定义弹出动画 */
-@keyframes popIn {
+/* 合并淡入和弹出动画 */
+@keyframes fadePopIn {
     0% {
         transform: scale(0.7);
         opacity: 0;
     }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
     100% {
         transform: scale(1);
-        opacity: 1;
     }
 }
