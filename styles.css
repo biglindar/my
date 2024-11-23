@@ -32,7 +32,8 @@ body, html {
 .gif-img {
     width: 300px;  /* 缩小宽度 */
     height: auto;
-    animation: fadeIn 3s ease forwards;
+    animation: fadeIn 8s ease forwards, popIn 0.8s ease forwards;
+    transform-origin: center; /* 确保从中心弹出 */
 }
 
 /* 第二屏：奖杯展示样式 */
@@ -144,4 +145,16 @@ button {
     right: 20px;  /* 距离右侧20px */
     font-size: 14px;
     color: #fff;
+}
+
+/* 新增：定义弹出动画 */
+@keyframes popIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
