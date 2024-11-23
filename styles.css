@@ -100,8 +100,10 @@ body, html {
     border: 1px solid #ccc;
     background-color: #222;  /* 深灰色背景 */
     color: #fff;
+    box-sizing: border-box;  /* 确保边框不影响宽度 */
 }
 
+/* 确保按钮宽度与输入框一致 */
 button {
     background-color: #007bff;
     color: white;
