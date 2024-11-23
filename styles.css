@@ -74,7 +74,7 @@ body, html {
     text-align: center;
     width: 100%;  /* 确保页面宽度为100% */
     box-sizing: border-box;  /* 包括内边距 */
-    position: relative;  /* 为了让联系方式定位在第3页 */
+    position: relative;  /* 确保该页面成为定位参考 */
 }
 
 /* 评论表单样式 */
