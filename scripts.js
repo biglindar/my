@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadComments();  // 页面加载时获取评论
 });
 
-const WORKER_URL = 'https://https://github.doon.eu.org';
+const WORKER_URL = 'https://github.doon.eu.org';
 
 document.getElementById('commentForm').addEventListener('submit', async function(event) {
     event.preventDefault();
