@@ -28,12 +28,11 @@
                 <h2>未解锁</h2>
                 <p>? 年 ? 月</p>
             </div>
-            <!-- 可以继续添加更多奖杯 -->
-        </div>
-        <!-- 固定在右下角的联系方式 -->
-        <div class="footer">
-            <p>CONTACT US</p>
-            <p>Email: ling@doon.eu.org</p>
+            <!-- 固定在右下角的联系方式 -->
+            <div class="footer">
+                <p>CONTACT US</p>
+                <p>Email: ling@doon.eu.org</p>
+            </div>
         </div>
     </section>
 
@@ -41,10 +40,11 @@
     <section class="page comment-page">
         <h1>留言评论</h1>
         <form id="commentForm">
+            <input type="text" id="usernameInput" placeholder="请输入用户名" required />
             <textarea id="commentInput" placeholder="写下你的评论..." required></textarea>
             <button type="submit">提交</button>
         </form>
-        <div id="commentsContainer"></div>
+        <div id="commentsContainer" class="comments-container"></div>
     </section>
 
     <script src="scripts.js"></script>
