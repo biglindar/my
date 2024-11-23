@@ -28,6 +28,13 @@ body, html {
     text-align: center;
 }
 
+/* 缩小后的 GIF 图片样式 */
+.gif-img {
+    width: 200px;  /* 缩小宽度 */
+    height: auto;
+    animation: fadeIn 3s ease forwards;
+}
+
 /* 第二屏：奖杯展示样式 */
 .trophy-page {
     background-color: rgba(34, 34, 34, 0.9);
@@ -36,6 +43,7 @@ body, html {
     position: relative;
 }
 
+/* 奖杯画廊样式 */
 .trophy-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +75,7 @@ body, html {
     color: #fff;
 }
 
-/* 评论区样式 */
+/* 第三屏：评论区样式 */
 .comment-page {
     background-color: #f9f9f9;
     color: #333;
@@ -82,16 +90,15 @@ body, html {
     width: 80%;
 }
 
-#usernameInput, #commentInput {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
 #commentInput {
+    width: 100%;
     height: 120px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
 }
 
 button {
@@ -103,6 +110,15 @@ button {
     cursor: pointer;
 }
 
+/* 评论容器 */
+.comments-container {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 /* 评论卡片样式 */
 .comment-card {
     background-color: white;
@@ -111,4 +127,11 @@ button {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
+    text-align: left;
+}
+
+/* 评论文本样式 */
+.comment-card .text {
+    font-size: 1rem;
+    color: #333;
 }
