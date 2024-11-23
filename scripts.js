@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 替换为你的 Cloudflare Worker URL
-const WORKER_URL = 'https://github-tok.biglindar.worker.dev';
+const WORKER_URL = 'https://github.biglindar.worker.dev';
 
 document.getElementById('commentForm').addEventListener('submit', async function(event) {
     event.preventDefault();
