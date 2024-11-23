@@ -21,7 +21,53 @@ body, html {
     scroll-snap-align: start;
 }
 
-/* 评论表单 */
+/* 第一屏：主页样式 */
+.home-page {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+}
+
+/* 第二屏：奖杯展示样式 */
+.trophy-page {
+    background-color: rgba(34, 34, 34, 0.9);
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.trophy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.trophy {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.trophy img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+/* 固定在右下角的联系方式 */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 评论区样式 */
 .comment-page {
     background-color: #f9f9f9;
     color: #333;
@@ -58,64 +104,11 @@ button {
 }
 
 /* 评论卡片样式 */
-.comments-container {
-    width: 80%;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .comment-card {
-    display: flex;
-    flex-direction: column;
     background-color: white;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-}
-
-.comment-header {
-    display: flex;
-    align-items: center;
-}
-
-.comment-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    background-color: #ccc;
-}
-
-.comment-content .username {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.comment-content .time {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.comment-footer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.reply-button,
-.like-button {
-    cursor: pointer;
-    color: #007bff;
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.reply-form {
-    display: none;
-    margin-top: 1rem;
 }
