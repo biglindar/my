@@ -30,7 +30,7 @@ body, html {
 
 /* 缩小后的 GIF 图片样式 */
 .gif-img {
-    width: 300px;  /* 缩小宽度 */
+    width: 200px;  /* 缩小宽度 */
     height: auto;
     animation: fadeIn 3s ease forwards;
 }
@@ -74,7 +74,7 @@ body, html {
     text-align: center;
     width: 100%;  /* 确保页面宽度为100% */
     box-sizing: border-box;  /* 包括内边距 */
-    position: relative;  /* 为了让联系方式定位在第3页 */
+    position: relative;  /* 使其成为定位的参考点 */
 }
 
 /* 评论表单样式 */
