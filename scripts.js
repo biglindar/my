@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // === 评论系统代码开始 ===
 
 // 替换为你的 Cloudflare Worker URL
-const WORKER_URL = 'https://github-tok.biglindar.workers.dev/';  // 替换为 Cloudflare Worker 的实际 URL
+const WORKER_URL = 'https://github-tok.biglindar.workers.dev';  // 替换为 Cloudflare Worker 的实际 URL
 
 document.getElementById('commentForm').addEventListener('submit', async function(event) {
     event.preventDefault();
