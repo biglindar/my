@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow-x: hidden;  /* 禁止横向滚动 */
     font-family: Arial, sans-serif;
     background-color: #000;
 }
@@ -81,6 +81,8 @@ body, html {
     color: #fff;  /* 设置文本颜色为白色 */
     padding: 2rem;
     text-align: center;
+    width: 100%;  /* 确保页面宽度为100% */
+    box-sizing: border-box;  /* 包括内边距 */
 }
 
 /* 评论表单样式 */
@@ -90,6 +92,7 @@ body, html {
     align-items: center;
     width: 80%;  /* 设置相同宽度 */
     margin-bottom: 2rem;  /* 给表单添加一些底部空间 */
+    box-sizing: border-box;  /* 包括内边距 */
 }
 
 #usernameInput, #commentInput {
@@ -111,6 +114,8 @@ button {
     padding: 0.8rem 2rem;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;  /* 保证按钮宽度一致 */
+    box-sizing: border-box;  /* 包括内边距 */
 }
 
 /* 评论容器 */
@@ -131,6 +136,7 @@ button {
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
     width: 100%;  /* 保证宽度一致 */
     text-align: left;
+    box-sizing: border-box;  /* 包括内边距 */
 }
 
 /* 评论文本样式 */
