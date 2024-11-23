@@ -30,7 +30,7 @@ body, html {
 
 /* 缩小后的 GIF 图片样式 */
 .gif-img {
-    width: 300px;  /* 缩小宽度 */
+    width: 200px;  /* 缩小宽度 */
     height: auto;
     animation: fadeIn 3s ease forwards;
 }
@@ -77,8 +77,8 @@ body, html {
 
 /* 第三屏：评论区样式 */
 .comment-page {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #000;  /* 改为黑色 */
+    color: #fff;  /* 设置文本颜色为白色 */
     padding: 2rem;
     text-align: center;
 }
@@ -97,8 +97,8 @@ body, html {
     margin-bottom: 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
-    background-color: white;
-    color: #333;
+    background-color: #222;  /* 调整输入框颜色以匹配背景 */
+    color: #fff;
 }
 
 button {
@@ -121,11 +121,11 @@ button {
 
 /* 评论卡片样式 */
 .comment-card {
-    background-color: white;
+    background-color: #222;  /* 评论卡片背景色 */
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
     width: 100%;
     text-align: left;
 }
@@ -133,5 +133,5 @@ button {
 /* 评论文本样式 */
 .comment-card .text {
     font-size: 1rem;
-    color: #333;
+    color: #fff;
 }
