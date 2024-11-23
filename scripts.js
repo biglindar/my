@@ -1,20 +1,15 @@
-// 页面加载完成后，执行以下操作
 document.addEventListener('DOMContentLoaded', function () {
     console.log('页面已加载完成');
-    
-    // 这里可以添加更多的交互逻辑
+    loadComments();  // 页面加载时获取评论
 });
 
-// === 评论系统代码开始 ===
-
 // 替换为你的 Cloudflare Worker URL
-const WORKER_URL = 'https://github-tok.biglindar.workers.dev';  // 替换为 Cloudflare Worker 的实际 URL
+const WORKER_URL = 'https://github-tok.biglindar.workers.dev';
 
 document.getElementById('commentForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     const comment = document.getElementById('commentInput').value;
 
-    // 发送请求提交评论
     const response = await fetch(WORKER_URL, {
         method: 'POST',
         headers: {
@@ -25,16 +20,15 @@ document.getElementById('commentForm').addEventListener('submit', async function
 
     if (response.ok) {
         alert('评论提交成功！');
-        loadComments();  // 提交成功后刷新评论
+        loadComments();  // 刷新评论
         document.getElementById('commentInput').value = '';  // 清空输入框
     } else {
         alert('评论提交失败，请稍后重试。');
     }
 });
 
-// 加载评论
 async function loadComments() {
-    const response = await fetch(WORKER_URL);  // 从 Cloudflare Worker 拉取评论
+    const response = await fetch(WORKER_URL);
     const comments = await response.json();
     
     const container = document.getElementById('commentsContainer');
@@ -46,8 +40,3 @@ async function loadComments() {
         container.appendChild(commentElement);
     });
 }
-
-// 页面加载时获取评论
-document.addEventListener('DOMContentLoaded', loadComments);
-
-// === 评论系统代码结束 ===
