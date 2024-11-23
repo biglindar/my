@@ -83,16 +83,17 @@ body, html {
     text-align: center;
 }
 
+/* 评论表单样式 */
 #commentForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 80%;  /* 设置相同宽度 */
+    margin-bottom: 2rem;  /* 给表单添加一些底部空间 */
 }
 
-#commentInput {
-    width: 100%;
-    height: 120px;
+#usernameInput, #commentInput {
+    width: 100%;  /* 保证输入框宽度一致 */
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
@@ -101,9 +102,18 @@ body, html {
     color: #fff;
 }
 
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* 评论容器 */
 .comments-container {
-    width: 80%;
+    width: 80%;  /* 保证评论容器宽度一致 */
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
@@ -117,7 +127,7 @@ body, html {
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-    width: 100%;
+    width: 100%;  /* 保证宽度一致 */
     text-align: left;
 }
 
@@ -126,4 +136,3 @@ body, html {
     font-size: 1rem;
     color: #fff;
 }
-
