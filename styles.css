@@ -66,15 +66,6 @@ body, html {
     margin-bottom: 1rem;
 }
 
-/* 固定在右下角的联系方式 */
-.footer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 14px;
-    color: #fff;
-}
-
 /* 第三屏：评论区样式 */
 .comment-page {
     background-color: rgba(34, 34, 34, 0.9);  /* 与第2页相同的背景颜色 */
@@ -83,6 +74,7 @@ body, html {
     text-align: center;
     width: 100%;  /* 确保页面宽度为100% */
     box-sizing: border-box;  /* 包括内边距 */
+    position: relative;  /* 为了让联系方式定位在第3页 */
 }
 
 /* 评论表单样式 */
@@ -142,5 +134,14 @@ button {
 /* 评论文本样式 */
 .comment-card .text {
     font-size: 1rem;
+    color: #fff;
+}
+
+/* 固定在第3页右下角的联系方式 */
+.footer {
+    position: absolute;  /* 修改为绝对定位 */
+    bottom: 20px;  /* 距离底部20px */
+    right: 20px;  /* 距离右侧20px */
+    font-size: 14px;
     color: #fff;
 }
