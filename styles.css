@@ -5,12 +5,13 @@ body, html {
     width: 100%;
     height: 100%;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;  /* 禁止横向滚动 */
-    font-family: Arial, sans-serif;
-    background-color: #000;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;  /* 确保字体正确设置 */
+    background-color: #000;  /* 背景颜色为黑色 */
+    color: #fff;  /* 文字颜色为白色 */
 }
 
-/* 每个页面部分占满整个屏幕 */
+/* 每个页面占满整个屏幕 */
 .page {
     width: 100%;
     height: 100vh;
@@ -19,44 +20,45 @@ body, html {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
-    position: relative; /* 方便放置左上角元素 */
 }
 
-/* 第一屏：主页样式 */
+/* 第一屏样式 */
 .home-page {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
+    position: relative;
 }
 
-/* 左上角的 GIF 图片样式 */
+/* 左上角的 GIF 图片 */
 .corner-gif {
     position: absolute;
-    top: 20px;    /* 距离顶部 20px */
-    left: 20px;   /* 距离左侧 20px */
-    width: 100px; /* 设置合适的大小 */
-    height: auto;
+    top: 20px;
+    left: 20px;
+    width: 100px;
 }
 
-/* 中间的动态 Logo 样式 */
+/* 中间动态 Logo */
 .dynamic-logo {
-    width: 300px;  /* 设置合适的宽度 */
-    height: auto;
-    animation: rotateGlow 10s linear infinite;  /* 添加旋转和发光动画 */
-    filter: drop-shadow(0 0 10px #00ffcc);  /* 发光效果 */
+    width: 300px;
+    animation: rotateGlow 10s linear infinite;
+    filter: drop-shadow(0 0 10px #00ffcc);
 }
 
-/* 旋转和发光动画 */
+/* 第二屏：奖杯展示 */
+.trophy-gallery {
+    display: flex;
+    gap: 2rem;
+}
+
+/* 第三屏：评论区 */
+.comment-page {
+    background-color: rgba(34, 34, 34, 0.9);
+}
+
+/* 旋转发光动画 */
 @keyframes rotateGlow {
     0% {
         transform: rotate(0deg);
-        filter: drop-shadow(0 0 10px #00ffcc);
-    }
-    50% {
-        filter: drop-shadow(0 0 30px #00ffcc);
     }
     100% {
         transform: rotate(360deg);
-        filter: drop-shadow(0 0 10px #00ffcc);
     }
 }
