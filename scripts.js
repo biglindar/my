@@ -49,18 +49,3 @@ async function loadComments() {
         container.appendChild(commentElement);
     });
 }
-
-// 页面切换动画
-document.addEventListener('scroll', function () {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach((page) => {
-        const rect = page.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            page.classList.add('page-enter');
-            page.classList.remove('page-leave');
-        } else {
-            page.classList.add('page-leave');
-            page.classList.remove('page-enter');
-        }
-    });
-});
