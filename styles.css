@@ -19,6 +19,19 @@ body, html {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    transition: transform 0.8s ease, opacity 0.8s ease; /* 添加平滑过渡动画 */
+    opacity: 1;
+}
+
+/* 切换状态时的样式 */
+.page-leave {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.page-enter {
+    transform: translateY(100%);
+    opacity: 0;
 }
 
 /* 第一屏：主页样式 */
@@ -38,28 +51,42 @@ body, html {
 
 /* 第二屏：奖杯展示样式 */
 .trophy-page {
-    background: url('123.gif') no-repeat center center fixed; /* 添加GIF作为背景 */
-    background-size: cover;
     position: relative;
     color: #fff;
     text-align: center;
+    overflow: hidden; /* 避免背景图溢出 */
 }
 
-/* 第二屏：奖杯展示样式 */
-.trophy-page {
-    background: url('123.gif') no-repeat center center fixed; /* 添加GIF作为背景 */
-    background-size: contain; /* 调整背景图大小为与内容适配 */
-    background-color: rgba(0, 0, 0, 0.8); /* 添加背景色，避免GIF周围留白 */
-    position: relative;
-    color: #fff;
-    text-align: center;
+.trophy-page::before,
+.comment-page::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    width: 300px; /* 与第一页GIF一致 */
+    height: auto;
+    transform: translate(-50%, -50%);
+    background: url('123.gif') no-repeat center center;
+    background-size: contain;
+    z-index: -1; /* 保证在内容底层 */
+}
+
+/* 奖杯画廊样式 */
+.trophy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* 保证纵向对齐 */
+    gap: 1.5rem; /* 减小间距 */
 }
 
 .trophy {
+    flex: 1 1 calc(33.333% - 1rem); /* 自动调整列数 */
+    max-width: 250px;
+    min-width: 200px; /* 设置最小宽度 */
     background-color: #444;
     border-radius: 10px;
     padding: 1rem;
-    width: 250px;
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
@@ -73,11 +100,10 @@ body, html {
 
 /* 第三屏：评论区样式 */
 .comment-page {
-    background: url('123.gif') no-repeat center center fixed; /* 添加GIF作为背景 */
-    background-size: contain; /* 调整背景图大小为与内容适配 */
-    background-color: rgba(0, 0, 0, 0.8); /* 添加背景色，避免GIF周围留白 */
     position: relative;
-    color: #fff;  /* 设置文本颜色为白色 */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
     padding: 2rem;
     text-align: center;
     width: 100%;  /* 确保页面宽度为100% */
