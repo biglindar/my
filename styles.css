@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;  /* 禁止横向滚动 */
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: #000;
 }
@@ -28,12 +28,7 @@ body, html {
     text-align: center;
 }
 
-/* 隐藏的 SVG 在第1页 */
-.svg-bg {
-    display: none;
-}
-
-/* GIF 动画效果 */
+/* 缩小后的 GIF 图片样式 */
 .gif-img {
     width: 300px;
     height: auto;
@@ -43,31 +38,77 @@ body, html {
 
 /* 第二屏：奖杯展示样式 */
 .trophy-page {
+    position: relative;
+    overflow: hidden;
     background-color: rgba(34, 34, 34, 0.9);
     color: #fff;
     text-align: center;
-    position: relative;
-    background-image: url('abc.svg');  /* 设置背景图为 abc.svg */
+}
+
+/* 在背景层上添加 svg 背景图 */
+.trophy-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('abc.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: rotateBackground 10s linear infinite;  /* 旋转动画 */
+    animation: rotateBackground 10s linear infinite;
+    z-index: -1;
 }
 
 /* 第三屏：评论区样式 */
 .comment-page {
-    background-color: rgba(34, 34, 34, 0.9);  /* 与第2页相同的背景颜色 */
-    color: #fff;  /* 设置文本颜色为白色 */
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(34, 34, 34, 0.9);
+    color: #fff;
     padding: 2rem;
     text-align: center;
     width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    background-image: url('abc.svg');  /* 设置背景图为 abc.svg */
+}
+
+.comment-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('abc.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: rotateBackground 10s linear infinite;  /* 旋转动画 */
+    animation: rotateBackground 10s linear infinite;
+    z-index: -1;
+}
+
+/* 奖杯画廊样式 */
+.trophy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.trophy {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.trophy img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    animation: fadePopIn 1s ease forwards;
 }
 
 /* 评论表单样式 */
@@ -88,6 +129,17 @@ body, html {
     border: 1px solid #ccc;
     background-color: #222;
     color: #fff;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -128,6 +180,16 @@ body, html {
     color: #fff;
 }
 
+/* 背景图旋转动画 */
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* 合并淡入和弹出动画 */
 @keyframes fadePopIn {
     0% {
@@ -140,15 +202,5 @@ body, html {
     }
     100% {
         transform: scale(1);
-    }
-}
-
-/* 背景图旋转动画 */
-@keyframes rotateBackground {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
     }
 }
