@@ -10,7 +10,18 @@ body, html {
     background-color: #000;
 }
 
-/* 每个页面部分占满整个屏幕 */
+/* 全局背景GIF样式 */
+.background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 确保GIF覆盖整个屏幕 */
+    z-index: -2;  /* 放在所有内容的底层 */
+}
+
+/* 每个页面部分 */
 .page {
     width: 100%;
     height: 100vh;
@@ -20,39 +31,45 @@ body, html {
     align-items: center;
     scroll-snap-align: start;
     position: relative;
-    z-index: 1; /* 确保内容在背景GIF之上 */
+    z-index: 1;  /* 确保内容在背景之上 */
 }
 
-/* 固定背景GIF */
-.background-gif {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* 确保在所有内容之下 */
-}
-
-/* 第一屏：主页样式 */
+/* 第一屏样式 */
 .home-page {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
 }
 
-/* 缩小后的 GIF 图片样式（仅用于第1页中央显示） */
-.home-page .gif-img {
+/* 缩小后的GIF样式 */
+.gif-img {
     width: 300px;
     height: auto;
-    z-index: 2; /* 位于背景GIF之上 */
 }
 
-/* 第二屏和第三屏内容样式 */
+/* 第二屏：奖杯展示 */
 .trophy-page, .comment-page {
-    background-color: rgba(34, 34, 34, 0.9); /* 半透明背景 */
+    background-color: rgba(34, 34, 34, 0.9);
     color: #fff;
 }
 
-/* 其他原有样式保持不变 */
-/* 奖杯展示、评论区和表单等样式保持不变 */
+/* 奖杯样式 */
+.trophy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* 评论区样式 */
+.comment-page {
+    padding: 2rem;
+}
+
+/* 固定联系方式 */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
