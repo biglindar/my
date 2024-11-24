@@ -19,6 +19,7 @@ body, html {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    position: relative; /* 方便放置左上角元素 */
 }
 
 /* 第一屏：主页样式 */
@@ -28,138 +29,34 @@ body, html {
     text-align: center;
 }
 
-/* 缩小后的 GIF 图片样式 */
-.gif-img {
-    width: 300px;  /* 缩小宽度 */
+/* 左上角的 GIF 图片样式 */
+.corner-gif {
+    position: absolute;
+    top: 20px;    /* 距离顶部 20px */
+    left: 20px;   /* 距离左侧 20px */
+    width: 100px; /* 设置合适的大小 */
     height: auto;
-    animation: fadePopIn 1s ease forwards;  /* 统一动画 */
-    transform-origin: center; /* 确保从中心弹出 */
 }
 
-/* 第二屏：奖杯展示样式 */
-.trophy-page {
-    background-color: rgba(34, 34, 34, 0.9);
-    color: #fff;
-    text-align: center;
-    position: relative;
+/* 中间的动态 Logo 样式 */
+.dynamic-logo {
+    width: 300px;  /* 设置合适的宽度 */
+    height: auto;
+    animation: rotateGlow 10s linear infinite;  /* 添加旋转和发光动画 */
+    filter: drop-shadow(0 0 10px #00ffcc);  /* 发光效果 */
 }
 
-/* 奖杯画廊样式 */
-.trophy-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.trophy {
-    background-color: #444;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.trophy img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-    animation: fadePopIn 1s ease forwards;  /* 奖杯动画复用 */
-}
-
-/* 第三屏：评论区样式 */
-.comment-page {
-    background-color: rgba(34, 34, 34, 0.9);  /* 与第2页相同的背景颜色 */
-    color: #fff;  /* 设置文本颜色为白色 */
-    padding: 2rem;
-    text-align: center;
-    width: 100%;  /* 确保页面宽度为100% */
-    box-sizing: border-box;  /* 包括内边距 */
-    position: relative;  /* 为了让联系方式定位在第3页 */
-}
-
-/* 评论表单样式 */
-#commentForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;  /* 设置相同宽度 */
-    margin-bottom: 2rem;  /* 给表单添加一些底部空间 */
-    box-sizing: border-box;  /* 包括内边距 */
-}
-
-#usernameInput, #commentInput {
-    width: 100%;  /* 保证输入框宽度一致 */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: #222;  /* 深灰色背景 */
-    color: #fff;
-    box-sizing: border-box;  /* 确保边框不影响宽度 */
-}
-
-/* 确保按钮宽度与输入框一致 */
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;  /* 保证按钮宽度一致 */
-    box-sizing: border-box;  /* 包括内边距 */
-}
-
-/* 评论容器 */
-.comments-container {
-    width: 80%;  /* 保证评论容器宽度一致 */
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-/* 评论卡片样式 */
-.comment-card {
-    background-color: #222;  /* 深灰色背景 */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-    width: 100%;  /* 保证宽度一致 */
-    text-align: left;
-    box-sizing: border-box;  /* 包括内边距 */
-    animation: fadePopIn 1s ease forwards;  /* 评论动画复用 */
-}
-
-/* 评论文本样式 */
-.comment-card .text {
-    font-size: 1rem;
-    color: #fff;
-}
-
-/* 固定在第3页右下角的联系方式 */
-.footer {
-    position: absolute;  /* 修改为绝对定位 */
-    bottom: 20px;  /* 距离底部20px */
-    right: 20px;  /* 距离右侧20px */
-    font-size: 14px;
-    color: #fff;
-}
-
-/* 合并淡入和弹出动画 */
-@keyframes fadePopIn {
+/* 旋转和发光动画 */
+@keyframes rotateGlow {
     0% {
-        transform: scale(0.7);
-        opacity: 0;
+        transform: rotate(0deg);
+        filter: drop-shadow(0 0 10px #00ffcc);
     }
-    60% {
-        transform: scale(1.05);
-        opacity: 1;
+    50% {
+        filter: drop-shadow(0 0 30px #00ffcc);
     }
     100% {
-        transform: scale(1);
+        transform: rotate(360deg);
+        filter: drop-shadow(0 0 10px #00ffcc);
     }
 }
