@@ -6,12 +6,11 @@ body, html {
     height: 100%;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;  /* 确保字体正确设置 */
-    background-color: #000;  /* 背景颜色为黑色 */
-    color: #fff;  /* 文字颜色为白色 */
+    font-family: Arial, sans-serif;
+    background-color: #000;
 }
 
-/* 每个页面占满整个屏幕 */
+/* 每个页面部分占满整个屏幕 */
 .page {
     width: 100%;
     height: 100vh;
@@ -24,41 +23,38 @@ body, html {
 
 /* 第一屏样式 */
 .home-page {
-    position: relative;
+    position: relative;  /* 为了定位 GIF 和 SVG */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
 }
 
-/* 左上角的 GIF 图片 */
-.corner-gif {
+/* 左上角 GIF */
+.gif-img.top-left {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100px;
+    width: 150px;  /* 调整尺寸 */
+    height: auto;
 }
 
-/* 中间动态 Logo */
-.dynamic-logo {
-    width: 300px;
-    animation: rotateGlow 10s linear infinite;
-    filter: drop-shadow(0 0 10px #00ffcc);
+/* 中间 SVG 样式 */
+.center-svg {
+    width: 300px;  /* 自定义大小 */
+    height: auto;
 }
 
-/* 第二屏：奖杯展示 */
-.trophy-gallery {
-    display: flex;
-    gap: 2rem;
-}
-
-/* 第三屏：评论区 */
-.comment-page {
-    background-color: rgba(34, 34, 34, 0.9);
-}
-
-/* 旋转发光动画 */
-@keyframes rotateGlow {
-    0% {
+/* SVG 旋转动画 */
+@keyframes rotate {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
+
+.rotating {
+    animation: rotate 5s linear infinite;  /* 旋转持续时间与速度 */
+}
+
+/* 其他部分代码保持不变 */
