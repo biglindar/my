@@ -38,10 +38,11 @@ body, html {
 
 /* 第二屏：奖杯展示样式 */
 .trophy-page {
-    background-color: rgba(34, 34, 34, 0.9);
+    background: url('123.gif') no-repeat center center fixed; /* 添加GIF作为背景 */
+    background-size: cover;
+    position: relative;
     color: #fff;
     text-align: center;
-    position: relative;
 }
 
 /* 奖杯画廊样式 */
@@ -70,13 +71,14 @@ body, html {
 
 /* 第三屏：评论区样式 */
 .comment-page {
-    background-color: rgba(34, 34, 34, 0.9);  /* 与第2页相同的背景颜色 */
+    background: url('123.gif') no-repeat center center fixed; /* 添加GIF作为背景 */
+    background-size: cover;
+    position: relative;
     color: #fff;  /* 设置文本颜色为白色 */
     padding: 2rem;
     text-align: center;
     width: 100%;  /* 确保页面宽度为100% */
     box-sizing: border-box;  /* 包括内边距 */
-    position: relative;  /* 为了让联系方式定位在第3页 */
 }
 
 /* 评论表单样式 */
