@@ -12,10 +12,10 @@
 <body>
     <!-- 第一屏：主页内容 -->
     <section class="page home-page">
-        <img src="123.gif" alt="左上角 GIF" class="corner-gif">
-        <div class="centered">
-            <img src="abc.svg" alt="动态 Logo" class="dynamic-logo">
-        </div>
+        <!-- 左上角 GIF -->
+        <img src="123.gif" alt="Top-left GIF" class="gif-img top-left">
+        <!-- 中间 SVG -->
+        <img src="abc.svg" alt="Centered SVG" class="center-svg rotating">
     </section>
 
     <!-- 第二屏：奖杯展示 -->
@@ -24,13 +24,13 @@
         <div class="trophy-gallery">
             <div class="trophy">
                 <img src="trophies/trophy1.png" alt="奖杯1">
-                <h2>奖杯 1</h2>
-                <p>2024 年 10 月</p>
+                <h2>未解锁</h2>
+                <p>? 年 ? 月</p>
             </div>
             <div class="trophy">
                 <img src="trophies/trophy2.png" alt="奖杯2">
-                <h2>奖杯 2</h2>
-                <p>2024 年 11 月</p>
+                <h2>未解锁</h2>
+                <p>? 年 ? 月</p>
             </div>
         </div>
     </section>
@@ -39,11 +39,12 @@
     <section class="page comment-page">
         <h1>留言评论</h1>
         <form id="commentForm">
-            <textarea id="commentInput" placeholder="输入你的评论..." required></textarea>
+            <textarea id="commentInput" placeholder="评论系统部署在github，加载评论会有点慢，并且可能时不时会被墙" required></textarea>
             <button type="submit">提交</button>
         </form>
         <div id="commentsContainer" class="comments-container"></div>
 
+        <!-- 固定在第3页右下角的联系方式 -->
         <div class="footer">
             <p>CONTACT US</p>
             <p>Email: ling@doon.eu.org</p>
