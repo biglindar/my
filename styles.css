@@ -28,26 +28,17 @@ body, html {
     text-align: center;
 }
 
-/* 缩小后的 GIF 图片样式 */
+/* 隐藏的 SVG 在第1页 */
+.svg-bg {
+    display: none;
+}
+
+/* GIF 动画效果 */
 .gif-img {
-    width: 300px;  /* 缩小宽度 */
+    width: 300px;
     height: auto;
-    animation: fadePopIn 1s ease forwards;  /* 统一动画 */
-    transform-origin: center; /* 确保从中心弹出 */
-}
-
-/* 中间旋转的 SVG 图片 */
-.centered-abc {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.abc-img {
-    width: 200px;
-    height: auto;
-    animation: rotateAnimation 10s linear infinite;
+    animation: fadePopIn 1s ease forwards;
+    transform-origin: center;
 }
 
 /* 第二屏：奖杯展示样式 */
@@ -56,30 +47,11 @@ body, html {
     color: #fff;
     text-align: center;
     position: relative;
-}
-
-/* 奖杯画廊样式 */
-.trophy-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.trophy {
-    background-color: #444;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.trophy img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-    animation: fadePopIn 1s ease forwards;  /* 奖杯动画复用 */
+    background-image: url('abc.svg');  /* 设置背景图为 abc.svg */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: rotateBackground 10s linear infinite;  /* 旋转动画 */
 }
 
 /* 第三屏：评论区样式 */
@@ -88,9 +60,14 @@ body, html {
     color: #fff;  /* 设置文本颜色为白色 */
     padding: 2rem;
     text-align: center;
-    width: 100%;  /* 确保页面宽度为100% */
-    box-sizing: border-box;  /* 包括内边距 */
-    position: relative;  /* 为了让联系方式定位在第3页 */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url('abc.svg');  /* 设置背景图为 abc.svg */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: rotateBackground 10s linear infinite;  /* 旋转动画 */
 }
 
 /* 评论表单样式 */
@@ -98,37 +75,25 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;  /* 设置相同宽度 */
-    margin-bottom: 2rem;  /* 给表单添加一些底部空间 */
-    box-sizing: border-box;  /* 包括内边距 */
+    width: 80%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 #usernameInput, #commentInput {
-    width: 100%;  /* 保证输入框宽度一致 */
+    width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     border: 1px solid #ccc;
-    background-color: #222;  /* 深灰色背景 */
+    background-color: #222;
     color: #fff;
-    box-sizing: border-box;  /* 确保边框不影响宽度 */
-}
-
-/* 确保按钮宽度与输入框一致 */
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;  /* 保证按钮宽度一致 */
-    box-sizing: border-box;  /* 包括内边距 */
+    box-sizing: border-box;
 }
 
 /* 评论容器 */
 .comments-container {
-    width: 80%;  /* 保证评论容器宽度一致 */
+    width: 80%;
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
@@ -137,15 +102,15 @@ button {
 
 /* 评论卡片样式 */
 .comment-card {
-    background-color: #222;  /* 深灰色背景 */
+    background-color: #222;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-    width: 100%;  /* 保证宽度一致 */
+    width: 100%;
     text-align: left;
-    box-sizing: border-box;  /* 包括内边距 */
-    animation: fadePopIn 1s ease forwards;  /* 评论动画复用 */
+    box-sizing: border-box;
+    animation: fadePopIn 1s ease forwards;
 }
 
 /* 评论文本样式 */
@@ -156,9 +121,9 @@ button {
 
 /* 固定在第3页右下角的联系方式 */
 .footer {
-    position: absolute;  /* 修改为绝对定位 */
-    bottom: 20px;  /* 距离底部20px */
-    right: 20px;  /* 距离右侧20px */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     font-size: 14px;
     color: #fff;
 }
@@ -178,8 +143,8 @@ button {
     }
 }
 
-/* 旋转动画 */
-@keyframes rotateAnimation {
+/* 背景图旋转动画 */
+@keyframes rotateBackground {
     0% {
         transform: rotate(0deg);
     }
