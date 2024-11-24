@@ -26,6 +26,7 @@ body, html {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
+    position: relative;
 }
 
 /* 缩小后的 GIF 图片样式 */
@@ -34,6 +35,7 @@ body, html {
     height: auto;
     animation: fadePopIn 1s ease forwards;
     transform-origin: center;
+    z-index: 10; /* 确保 gif 在其他内容之上 */
 }
 
 /* 第二屏：奖杯展示样式 */
@@ -45,8 +47,8 @@ body, html {
     text-align: center;
 }
 
-/* 在背景层上添加 svg 背景图 */
-.trophy-page::before {
+/* 在背景层上添加 svg 背景图，仅在第二页和第三页 */
+.trophy-page::before, .comment-page::before {
     content: "";
     position: absolute;
     top: 0;
@@ -72,19 +74,9 @@ body, html {
     width: 100%;
 }
 
-.comment-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('abc.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: rotateBackground 10s linear infinite;
-    z-index: -1;
+/* 隐藏第1页的 SVG，确保只在第二和第三页显示 */
+.home-page::before {
+    display: none;
 }
 
 /* 奖杯画廊样式 */
