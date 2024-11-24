@@ -24,10 +24,11 @@ document.getElementById('commentForm').addEventListener('submit', async function
     });
 
     if (response.ok) {
-        loadComments();  // 提交成功后刷新评论
+        console.log('评论提交成功');
         document.getElementById('commentInput').value = '';  // 清空输入框
+        loadComments();  // 重新加载评论
     } else {
-        alert('评论提交失败，请稍后重试。');
+        console.log('评论提交失败');
     }
 });
 
@@ -35,17 +36,18 @@ document.getElementById('commentForm').addEventListener('submit', async function
 async function loadComments() {
     const response = await fetch(WORKER_URL);
     const comments = await response.json();
-    
-    const container = document.getElementById('commentsContainer');
-    container.innerHTML = '';  // 清空旧评论
+    const commentsContainer = document.getElementById('commentsContainer');
+    commentsContainer.innerHTML = '';  // 清空评论容器
 
-    comments.reverse().forEach(comment => {
-        const commentElement = document.createElement('div');
-        commentElement.className = 'comment-card';
+    comments.forEach(comment => {
+        const commentCard = document.createElement('div');
+        commentCard.classList.add('comment-card');
 
-        commentElement.innerHTML = `
-            <div class="text">${comment.body}</div>  <!-- 仅显示评论内容 -->
-        `;
-        container.appendChild(commentElement);
+        const commentText = document.createElement('p');
+        commentText.classList.add('text');
+        commentText.textContent = comment.body;
+
+        commentCard.appendChild(commentText);
+        commentsContainer.appendChild(commentCard);
     });
 }
