@@ -29,11 +29,20 @@ body, html {
     background-position: center; /* 居中显示图片 */
     background-repeat: no-repeat; /* 防止图片重复 */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     color: #fff;
     text-align: center;
+    position: relative;
+}
+
+/* 左上角图片样式 */
+.top-left-img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: auto;
 }
 
 /* 缩小后的 GIF 图片样式 */
@@ -148,9 +157,28 @@ button {
     color: #fff;
 }
 
-/* 固定在第3页右下角的联系方式 */
+/* 第四屏：GIF样式 */
+.gif-page {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    color: #fff;
+}
+
+/* 中心GIF图片样式 */
+.centered-gif {
+    width: 300px;
+    height: auto;
+    animation: fadePopIn 1s ease forwards;
+    transform-origin: center;
+}
+
+/* 第四屏右下角的联系方式 */
 .footer {
-    position: absolute;  /* 修改为绝对定位 */
+    position: absolute;  /* 绝对定位 */
     bottom: 20px;  /* 距离底部20px */
     right: 20px;  /* 距离右侧20px */
     font-size: 14px;
