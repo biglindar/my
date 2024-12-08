@@ -24,6 +24,10 @@ body, html {
 /* 第一屏：主页样式 */
 .home-page {
     background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('555.png'); /* 引用背景图片 */
+    background-size: cover; /* 图片自适应，覆盖整个容器 */
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 防止重复 */
     color: #fff;
     text-align: center;
 }
