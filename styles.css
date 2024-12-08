@@ -25,9 +25,13 @@ body, html {
 .home-page {
     background-color: rgba(0, 0, 0, 0.8);
     background-image: url('555.png'); /* 引用背景图片 */
-    background-size: cover; /* 图片自适应，覆盖整个容器 */
+    background-size: contain; /* 图片自适应，完整显示 */
     background-position: center; /* 居中显示图片 */
-    background-repeat: no-repeat; /* 防止重复 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: #fff;
     text-align: center;
 }
